@@ -22,7 +22,7 @@ export const busca = async (setDado, money, coinPerPage, pageNo) => {
   try {
     const resposta = await api.get(url);
     setDado(resposta.data);
-    console.log(resposta.data)
+    //console.log(resposta.data)
 
   } catch (error) {
     console.log(error);
