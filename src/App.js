@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useEffect, useState } from "react";
+import Coins from "./Components/Coins";
+import Navbar from "./Components/Navbar";
+import { busca } from "./Api/Api";
 
 function App() {
+  const [coins, setCoins] = useState([]);
+
+  useEffect(() => {
+    (busca(setCoins, 'brl', '10', '1'));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Coins coins={coins} />
+    </>
   );
 }
 
