@@ -40,8 +40,7 @@ const Modal = (props) => {
   {props.element} 
       </div>
       <ul className={click ? "modal active" : "modal"} >
-            {props.data.id}
-            <p onClick={handleClick}>[FECHAR]</p>
+
             <CoinInfo coin={props.data} />
       </ul>
 

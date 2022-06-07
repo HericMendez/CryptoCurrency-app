@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const api = axios.create({
+
+const api = axios.create({
   baseURL: "https://api.coingecko.com/api/v3/coins/",
 });
 
@@ -18,13 +19,15 @@ export const busca = async (setDado, money, coinPerPage, pageNo) => {
 
   const url = `markets?vs_currency=${urlObj.currency}
 &order=market_cap_desc&per_page=${urlObj.perPage}
-&page=${urlObj.page}&sparkline=false`;
+&page=${urlObj.page}&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C30d%2C200d%2C1y`;
   try {
     const resposta = await api.get(url);
     setDado(resposta.data);
-    //console.log(resposta.data)
+    console.log(resposta.data[0])
 
   } catch (error) {
     console.log(error);
   }
 };
+
+
