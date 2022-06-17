@@ -9,6 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scrollbar-color: dark;
 }
 
 body {
@@ -30,6 +31,11 @@ a {
 h1 {
   text-align: center;
   margin: 1rem;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 code {
